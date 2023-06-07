@@ -1,6 +1,6 @@
 # Quasar App (todolist)
 
-Test Miloctav Todo List
+Test Todo List
 
 ## Install the dependencies
 ```bash
