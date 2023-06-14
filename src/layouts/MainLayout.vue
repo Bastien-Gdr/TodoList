@@ -14,7 +14,7 @@
         <div class="text-h3">Todo</div>
         <div class="text-subtitle1">{{ todaysDate }}</div>
       </div>
-      <q-img src="icons/tekapo.jpg" class="header-image absolute-top" />
+      <q-img src="src/assets/tekapo.jpg" class="header-image absolute-top" />
     </q-header>
 
     <q-drawer
@@ -64,7 +64,7 @@
           </q-list>
         </q-scroll-area>
 
-        <q-img class="absolute-top" src="icons/tekapo.jpg" style="height: 192px">
+        <q-img class="absolute-top" src="src/assets/tekapo.jpg" style="height: 192px">
           <div class="absolute-bottom bg-transparent">
             <q-avatar size="56px" class="q-mb-sm">
               <img src="https://cdn.quasar.dev/img/boy-avatar.png">

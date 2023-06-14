@@ -70,6 +70,7 @@
 
 <script>
 import { defineComponent } from 'vue'
+import axios from 'axios'
 
 export default defineComponent({
 
@@ -102,6 +103,11 @@ export default defineComponent({
       }).onOk(() => {
         this.tasks.splice(index, 1)
         this.$q.notify('Tâche effacée')
+        axios.default.delete('http://localhost:3000').then(response => {
+        console.log('tâche supprimée');
+      }).catch(e => {
+        console.log('erreur lors de la suppression');
+      })
       })
     },
     addTask(){
@@ -109,13 +115,29 @@ export default defineComponent({
         title: this.newTask,
         done: false
       })
-      this.newTask = ''
+      // this.newTask = ''
 
-      axios.get('https://http://localhost:9000/api/?something=1').then(response => {
-        console.log(ok);
-      }).catch(e => {
-        console.log(pasok);
-      })
+     var newTask = ''
+
+      axios({
+    method: 'post',
+    url: 'http://localhost:3000/task',
+    data: newTask
+})
+.then(function (reponse) {
+    //On traite la suite une fois la réponse obtenue
+    console.log(reponse);
+})
+.catch(function (erreur) {
+    //On traite ici les erreurs éventuellement survenues
+    console.log(erreur);
+});
+
+      // axios.default.get('http://localhost:3000').then(response => {
+      //   console.log('ok');
+      // }).catch(e => {
+      //   console.log('non transmis');
+      // })
     },
   }
 
